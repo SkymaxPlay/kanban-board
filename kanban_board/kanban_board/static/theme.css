@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe ui', sans-serif;
+    font-size: 18px;
+    background-color: #f1f1f1;
+}
+
+.navbar-main {
+    background-color: #181818;
+    height: 80px;
+    color: #fff;
+}
+
+.form-label {
+    font-size: 1.2rem;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.spinner-border {
+    width: 80px;
+    height: 80px;
+}
+
+.task {
+    border-left-width: 3px;
+    border-left-style: solid;
+    margin: 5px;
+    padding: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.task:hover {
+    filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.4));
+}
+
+#todo .task {
+    background: hsl(198, 80%, 65%);
+    border-left-color: hsl(198, 80%, 50%);
+}
+
+#progress .task {
+    background: hsl(48, 80%, 65%);
+    border-left-color: hsl(48, 80%, 50%);
+}
+
+#done .task {
+    background: hsl(102, 80%, 65%);
+    border-left-color: hsl(102, 80%, 50%);
+}
+
+.board-container {
+    padding-bottom: 150px;
+}

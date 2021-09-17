@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="pyramid web application">
+  <meta name="author" content="Rafał Skupień">
+  <link rel="shortcut icon" href="{{request.static_url('kanban_board:static/pyramid-16x16.png')}}">
+
+  <title>Tablica Kanban</title>
+
+  <link href="{{request.static_url('kanban_board:static/bootstrap-5.0.2/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{request.static_url('kanban_board:static/theme.css')}}" rel="stylesheet">
+  {% block styles %}
+  {% endblock styles %}
+
+  <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <nav class="navbar navbar-dark navbar-expand-lg navbar-main">
+    <div class="container justify-content-end">
+      {% if view.logged_in and request.url != request.route_url("login") %}
+      <div class="d-flex align-items-center">
+        <i class="bi bi-person-circle"></i>
+        <span class="ms-1 me-3">{{view.user_data.username}}</span>
+        <a class="btn btn-outline-light" href="{{request.route_url('logout')}}">Wyloguj</a>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+
+    {% block content %}
+    <p>No content</p>
+    {% endblock content %}
+
+  <script type="text/javascript" src="{{request.static_url('kanban_board:static/jquery/jquery-3.6.0.min.js')}}"></script>
+  <script type="text/javascript" src="{{request.static_url('kanban_board:static/bootstrap-5.0.2/js/bootstrap.bundle.min.js')}}"></script>
+  {% block scripts %}
+  {% endblock scripts %}
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+</body>
+
+</html>

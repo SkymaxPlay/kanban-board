@@ -1,0 +1,3 @@
+[run]
+source = kanban_board
+omit = kanban_board/test*

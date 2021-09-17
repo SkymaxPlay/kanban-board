@@ -1,0 +1,36 @@
+{% extends "layout.jinja2" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{request.static_url('kanban_board:static/jquery-confirm-3.3.4/jquery-confirm.min.css')}}">
+{% endblock styles %}
+
+
+{% block content %}
+<div class="container mt-5">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>Tablica Kanban</h1>
+    <button id="add-task" class="btn btn-primary">Dodaj zadanie</button>
+  </div>
+  
+</div>
+
+<div class="d-flex justify-content-around mt-3">
+
+  <div id="todo" class="w-25 d-inline-block board-container">
+  </div>
+
+  <div id="progress" class="w-25 d-inline-block board-container">
+  </div>
+
+  <div id="done" class="w-25 d-inline-block board-container">
+  </div>
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{{request.static_url('kanban_board:static/js/board.js')}}"></script>
+  <script type="text/javascript" src="{{request.static_url('kanban_board:static/jquery-confirm-3.3.4/jquery-confirm.min.js')}}" charset="UTF-8"></script>
+{% endblock scripts %}
